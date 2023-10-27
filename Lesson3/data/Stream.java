@@ -1,6 +1,7 @@
 package org.example.Repeat.Lesson3.data;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class Stream implements Iterable<StudentGroup> ,Comparable<Stream>{ //поток содержит группы
@@ -9,7 +10,7 @@ public class Stream implements Iterable<StudentGroup> ,Comparable<Stream>{ //п�
     private static int count = 0;
 
     public Stream(StudentGroup studentGroup) {
-        listOfStudyGroups.add(studentGroup);
+        this.listOfStudyGroups = new ArrayList<>(Collections.singleton(studentGroup));
         count++;
         countStudentGroup = count;
     }
@@ -26,7 +27,6 @@ public class Stream implements Iterable<StudentGroup> ,Comparable<Stream>{ //п�
         listOfStudyGroups.add(studentGroup);
     }
 
-
     @Override
     public Iterator<StudentGroup> iterator() {
         return null;
@@ -37,7 +37,14 @@ public class Stream implements Iterable<StudentGroup> ,Comparable<Stream>{ //п�
         if (this.countStudentGroup > o.getAmountGroup()) {
             return 1;
         }else return -1;
+    }
 
+    @Override
+    public String toString() {
+        return "Stream{" +
+                "listOfStudyGroups=" + listOfStudyGroups +
+                ", countStudentGroup=" + countStudentGroup +
+                '}';
     }
 }
 /**

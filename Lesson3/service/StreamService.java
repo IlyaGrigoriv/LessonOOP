@@ -1,28 +1,31 @@
 package org.example.Repeat.Lesson3.service;
 
 import org.example.Repeat.Lesson3.data.Stream;
-import org.example.Repeat.Lesson3.data.Student;
+import org.example.Repeat.Lesson3.data.StudentGroup;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 
 public class StreamService { //сущьность отвечающая за созданея и хранения потоков
-    private ArrayList<Stream> stream;
-    private int amountStream ;
+    private ArrayList<StudentGroup> stream;
+    private int amountStream = 0;
     private static int count = 0;
-    public void createStream(Stream stream){
-        this.stream = new ArrayList<>();
+
+    public void createStream(StudentGroup studentGroup) {
+        this.stream = new ArrayList<StudentGroup>(studentGroup);
         count++;
         amountStream = count;
     }
 
-    public void add(Stream stream){
-        this.stream.add(stream);
+    public void add(StudentGroup studentGroup) {
+        this.stream.add(studentGroup);
     }
 
-    public ArrayList<Stream> getSortedStream(){//как отсортировать список потоков созда
-        Collections.sort(stream);
-        return stream;
+    public StudentGroup getStream(int index){
+        return stream.get(index);
     }
+
+//    public ArrayList<Stream> getSortedStream() {//как отсортировать список потоков созда
+//        Collections.sort(stream);
+//        return stream;
+//    }
 }

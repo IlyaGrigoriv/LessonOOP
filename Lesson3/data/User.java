@@ -7,12 +7,16 @@ public class User {
     private String secondName;
     private String patronymic;
     private LocalDate dateOfBirth;
+    private int studentId;
+    private static int counter = 0;
 
     public User(String firstName, String secondName, String patronymic,int year,int month,int day ) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.patronymic = patronymic;
         this.dateOfBirth = LocalDate.of(year,month,day);
+        counter++;
+        studentId = counter;
     }
 
     public String getFirstName() {
@@ -50,11 +54,12 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-               "firstName='" + firstName + '\'' +
-               ", secondName='" + secondName + '\'' +
-               ", patronymic='" + patronymic + '\'' +
-               ", dateOfBirth=" + dateOfBirth +
-               '}';
+                " Id " + studentId +
+                " имя " + firstName + '\'' +
+                " фамилия " + secondName + '\'' +
+                " отчество " + patronymic + '\'' +
+                " дата рождение" + dateOfBirth +
+                '}';
     }
 
     @Override

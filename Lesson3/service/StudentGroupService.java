@@ -11,18 +11,27 @@ import java.util.Iterator;
 import java.util.List;
 
 public class StudentGroupService {
-    private StudentGroup studentGroup;
+    private ArrayList<StudentGroup> listGroup;
+    private int numberGroup;
+    private static int count = 200;
 
-    public void createStudentGroup(Teacher teacher, ArrayList<Student> students) {
-        this.studentGroup = new StudentGroup(teacher, students);
+    public StudentGroupService() {
+        this.listGroup = new ArrayList<>();
+        count++;
+        this.numberGroup = count
+        ;
     }
 
-    public StudentGroup getStudentGroup() {
-        return studentGroup;
+    public void createStudentGroup(StudentGroup studentGroup) {
+        this.listGroup.add(studentGroup);
+    }
+
+    public StudentGroup  getStudentGroup(int index) {
+        return listGroup.get(index);
     }
 
     public Student getStudentFromStudentGroup(String firstName, String secondName){
-        Iterator<Student> iterator = studentGroup.iterator();
+        Iterator<Student> iterator = listGroup.iterator();
         List<Student> result = new ArrayList<>();
 
         while (iterator.hasNext()){
@@ -53,5 +62,9 @@ public class StudentGroupService {
         ArrayList<Student> students = new ArrayList<>(studentGroup.getStudents());
         students.sort(new UserComparator<>());
         return students;
+    }
+
+    public void formationOfStudyGroup(){
+
     }
 }

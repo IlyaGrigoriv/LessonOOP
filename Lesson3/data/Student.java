@@ -34,9 +34,4 @@ public class Student extends User implements Comparable<Student> {
             return 1;
         }else return -1;
     }
-
-//    @Override
-//    public int compareTo(Student o) {
-//        return this.studentId.compareTo(o.studentId);
-//    }
 }

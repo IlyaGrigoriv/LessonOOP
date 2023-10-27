@@ -4,28 +4,36 @@ import org.example.Repeat.Lesson3.data.*;
 import org.example.Repeat.Lesson3.service.DataService;
 import org.example.Repeat.Lesson3.service.StreamService;
 import org.example.Repeat.Lesson3.service.StudentGroupService;
+import org.example.Repeat.Lesson3.service.TeacherService;
 import org.example.Repeat.Lesson3.view.UserView;
 
-import java.time.LocalDate;
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserController {
 
-    private final DataService dataService = new DataService();
+    private final DataService teacherService = new DataService();
     private final StudentGroupService studentGroupService = new StudentGroupService();
     private final UserView userView = new UserView();
     private final StreamService streamService = new StreamService();
+    private final TeacherService teacherService = new TeacherService<>();
 
     public void createStudent(String firstName, String secondName, String patronymic, int year, int month, int day) {
-        dataService.create(firstName, secondName, patronymic, year, month, day);
-        ArrayList<Student> userList = dataService.getAll();
+        teacherService.create(firstName, secondName, patronymic, year, month, day);
+        ArrayList<Student> userList = teacherService.getAll();
         userView.sendOnConsole(userList);
     }
 
-    public void createStudentGroup(Teacher teacher) {
-        studentGroupService.createStudentGroup(teacher, dataService.getAll());//добавляет студентов а в дате юзеры
+    public void createStudentGroup(Teacher teacher, int numberGroup) {
+        studentGroupService.createStudentGroup(teacher, teacherService.getAll(), numberGroup);//добавляет студентов а в дате юзеры
+        StudentGroup studentGroups = studentGroupService.getStudentGroup();
+        userView.sendOnConsoleUserGroup(studentGroups);
+    }
+
+    public void createTeacher(String firstName, String secondName, String patronymic, int year, int month, int day) {
+        teacherService.create(firstName, secondName, patronymic, year, month, day);
+        ArrayList<Teacher> userList = teacherService.getAll();
+        userView.sendOnConsole(userList);
     }
 
     public Student getStudentInStudentGroup(String firstName, String secondName) {
@@ -40,15 +48,26 @@ public class UserController {
         return studentGroupService.getSortedByFIOStudentGroup();
     }
 
-    public void createStream(Stream stream){
-        streamService.createStream(stream);
+    public void createStream(StudentGroup studentGroup) {
+        streamService.createStream(studentGroup);
     }
+
+    public void addGroupInStream(StudentGroup studentGroup) {
+        streamService.add(studentGroup);
+    }
+
+    public StudentGroup getStudentGroup() {
+        return studentGroupService.getStudentGroup();
+    }
+
 
     public void sortStream(){
-        streamService.getSortedStream();
+//        streamService.getSortedStream();
     }
 
-    public void view(){
+    public void view() {
         userView.sendOnConsoleUserGroup(studentGroupService.getStudentGroup());
+        System.out.println();
+        userView.sendOnConsoleStream(streamService.getStream());
     }
 }

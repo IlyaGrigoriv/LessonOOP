@@ -22,6 +22,17 @@ public class Teacher extends User {
         this.teacherId = teacherId;
     }
 
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "teacherId=" + teacherId +
+                ", firstName='" + super.getFirstName() + '\'' +
+                ", secondName='" + super.getSecondName() + '\'' +
+                ", patronymic='" + super.getPatronymic() + '\'' +
+                ", dateOfBirth=" + super.getDateOfBirth() +
+                '}';
+    }
+
     public static class TeacherComparator implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {
