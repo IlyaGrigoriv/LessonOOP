@@ -11,6 +11,7 @@ public class Input {
     }
 
     public Gender inputGender(){
-        return Gender newGgender = gender;
+        Gender g = Gender.f;
+        return g ;
     }
 }

@@ -1,16 +1,18 @@
 package org.example.Repeat.Lesson6.Model;
 
+import org.example.Repeat.Lesson6.View;
+
 import java.util.Date;
 
-public class Note {
+public class Note  {
     private String _name;
     private String _surName;
     private String _lastName;
     private String _phoneNumber;
-    private Gender _gender;
+    private String _gender;
     private String _data;
 
-    public Note(String name, String surName, String lastName, String phoneNumber,  String data,Gender gender) {
+    public Note(String name, String surName, String lastName, String phoneNumber,  String data,String gender) {
         this._name = name;
         this._surName = surName;
         this._lastName = lastName;
@@ -30,4 +32,9 @@ public class Note {
                 ", дата рождения " + _data +
                 '}';
     }
+
+//    @Override
+//    public void show() {
+//        toString();
+//    }
 }
