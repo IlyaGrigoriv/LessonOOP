@@ -8,11 +8,8 @@ public class Controller {
     }
 
     public void inputNewRecord(){
-        boolean isRun =true;
-        while (isRun){
-            isRun =_service.createNewEntry();
-            _service.showNote();
-            _service.checkValidate();
-        }
+
+            _service.createNote();
+
     }
 }

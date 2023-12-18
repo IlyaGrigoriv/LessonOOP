@@ -1,24 +1,25 @@
 package org.example.Repeat.Lesson6.Model;
-
-import org.example.Repeat.Lesson6.View;
-
-import java.util.Date;
+import java.util.Calendar;
 
 public class Note  {
     private String _name;
     private String _surName;
     private String _lastName;
     private String _phoneNumber;
-    private String _gender;
-    private String _data;
+    private Gender _gender;
+    private Calendar _data;
 
-    public Note(String name, String surName, String lastName, String phoneNumber,  String data,String gender) {
-        this._name = name;
-        this._surName = surName;
-        this._lastName = lastName;
-        this._phoneNumber = phoneNumber;
-        this._gender = gender;
-        this._data = data;
+    public Note(String name, String surName, String lastName, String phoneNumber,  Calendar data,Gender gender) {
+        _name = name;
+        _surName = surName;
+        _lastName = lastName;
+        _phoneNumber = phoneNumber;
+        _gender = gender;
+        _data = data;
+    }
+
+    public Note(){
+
     }
 
     @Override
@@ -32,9 +33,4 @@ public class Note  {
                 ", дата рождения " + _data +
                 '}';
     }
-
-//    @Override
-//    public void show() {
-//        toString();
-//    }
 }
