@@ -18,10 +18,6 @@ public class Note  {
         _data = data;
     }
 
-    public Note(){
-
-    }
-
     @Override
     public String toString() {
         return "Note{" +

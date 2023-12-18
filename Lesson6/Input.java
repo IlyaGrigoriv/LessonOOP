@@ -13,14 +13,11 @@ public class Input {
     private Menu _menu = new Menu();
     private Exceptions _exceptions =new Exceptions();
     public String inputString(){
-        return _scanner.nextLine();
+        String str = _scanner.next();
+        return str;
     }
 
-    public long inputInt(){
-        return _scanner.nextLong();
-    }
-
-    public Calendar inputData(){
+    private Calendar inputData(){
         return new GregorianCalendar(inputData(7), inputData(8), inputData(9));
     }
 
@@ -31,6 +28,7 @@ public class Input {
         do {
             _menu.getMenu(index);
             name = inputString();
+//            inputString();
             if (!_exceptions.stringCheck(name))
                 isRun = false;
         } while (isRun);
@@ -56,10 +54,9 @@ public class Input {
 
         do {
             _menu.getMenu(index);
-            inputString();
             gender = inputString();
 
-            if (!_exceptions.genderInputCheck(gender)) {
+            if (_exceptions.genderInputCheck(gender)) {
                 isRun = false;
                 gender1 = setGender(gender);
             }else ;

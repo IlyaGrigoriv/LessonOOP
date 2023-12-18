@@ -19,35 +19,7 @@ public class Menu {
 
     }
 
-    public int getSize(){
-        return _menu.size();
-    }
-
     public void getMenu(int index){
         System.out.println(_menu.get(index));
-    }
-
-    private void menuName(){
-        System.out.println("В видите имя");
-    }
-
-    private void menuSurName(){
-        System.out.println("В видите фамилию");
-    }
-
-    private void menuLastName(){
-        System.out.println("В видите отчество");
-    }
-
-    private void menuPhoneNumber(){
-        System.out.println("В видите телефонный номер");
-    }
-
-    private void menuData(){
-        System.out.println("В видите дату рождения");
-    }
-
-    private void menuGender(){
-        System.out.println("В видите пол");
     }
 }

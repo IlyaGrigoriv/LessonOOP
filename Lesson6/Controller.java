@@ -8,8 +8,9 @@ public class Controller {
     }
 
     public void inputNewRecord(){
-
-            _service.createNote();
-
+        boolean isRun = true;
+        do {
+            isRun =_service.createNote();
+        }while (isRun);
     }
 }
