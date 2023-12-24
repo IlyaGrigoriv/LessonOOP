@@ -5,11 +5,11 @@ public class Note  {
     private String _name;
     private String _surName;
     private String _lastName;
-    private String _phoneNumber;
+    private long _phoneNumber;
     private Gender _gender;
     private Calendar _data;
 
-    public Note(String name, String surName, String lastName, String phoneNumber,  Calendar data,Gender gender) {
+    public Note(String name, String surName, String lastName, long phoneNumber,  Calendar data,Gender gender) {
         _name = name;
         _surName = surName;
         _lastName = lastName;

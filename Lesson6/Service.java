@@ -11,7 +11,7 @@ public class Service {
         Note note = new Note(_input.newName(0)
                 , _input.newName(1)
                 , _input.newName(2)
-                , _input.newName(3)
+                , _input.newPhone(3)
                 , _input.newData(4)
                 , _input.Gender(5));
         _menu.getMenu(6);
