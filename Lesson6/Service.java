@@ -15,13 +15,14 @@ public class Service {
                 , _input.newData(4)
                 , _input.Gender(5));
         _menu.getMenu(6);
+        _repositories.createFile(note);
         String stop = _input.inputString();
-        _repositories.add(note);
+//        _repositories.add(note);
         return stopInput(stop);
     }
 
     public void add(Note note) {
-        _repositories.add(note);
+        _repositories.createFile(note);
     }
 
     public boolean stopInput(String str) {

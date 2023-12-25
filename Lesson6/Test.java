@@ -1,11 +1,25 @@
 package org.example.Repeat.Lesson6;
 import org.example.Repeat.Lesson6.Model.Exceptions;
+import org.example.Repeat.Lesson6.Model.Gender;
+import org.example.Repeat.Lesson6.Model.Note;
+import org.example.Repeat.Lesson6.Model.Repositories;
+
+import java.util.Calendar;
 
 public class Test {
     public static void main(String[] args) {
-        testNumberPhone();
+//        testNumberPhone();
+//        testWriteFile();
 //        testString();
 //        testGender();
+    }
+
+    public static void testWriteFile(){
+        Repositories repositories = new Repositories();
+
+        Note note = new Note("Илья","Николаевич","Григорьев",Long.parseLong("89213248144"), Gender.m);
+//        note.setData(7,9,1981);
+        repositories.createFile(note);
     }
 
     public static void testGender(){
