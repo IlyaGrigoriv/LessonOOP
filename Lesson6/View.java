@@ -4,7 +4,7 @@ import org.example.Repeat.Lesson6.Model.Note;
 
 public class View {
 
-     public void showNote(Note note){
+     public static void showNote(Note note){
           note.toString();
      }
 }

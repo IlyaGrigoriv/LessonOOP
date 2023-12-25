@@ -7,15 +7,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class Repositories {
-    ArrayList<Note> _repositories;
-
-    public Repositories() {
-        _repositories = new ArrayList<>();
-    }
-
-    public void add(Note note) {
-        _repositories.add(note);
-    }
 
     public void createFile(Note note) {
         try {
@@ -24,7 +15,11 @@ public class Repositories {
                 file.createNewFile();
             }
             PrintWriter pw = new PrintWriter(file);
-            String text = note.getName() + note.getSurName() + note.getLastName() + note.getData().getTime() + note.getPhoneNumber() + note.getGender();
+            String text = "имя "+ note.getName() + " фамилия " + note.getSurName()
+                    +" отчество " + note.getLastName() + " дата рождения "
+                    +note.getData().getTime() +
+                    " тел " + note.getPhoneNumber() +
+                    " пол " +note.getGender();
             pw.println(text);
             pw.close();
         } catch (IOException ex) {

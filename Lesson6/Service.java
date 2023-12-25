@@ -16,14 +16,12 @@ public class Service {
                 , _input.Gender(5));
         _menu.getMenu(6);
         _repositories.createFile(note);
+        View.showNote(note);
         String stop = _input.inputString();
-//        _repositories.add(note);
+
         return stopInput(stop);
     }
 
-    public void add(Note note) {
-        _repositories.createFile(note);
-    }
 
     public boolean stopInput(String str) {
         if (str.equals("0")) {
