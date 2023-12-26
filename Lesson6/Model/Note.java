@@ -19,15 +19,6 @@ public class Note  {
         _data = data;
     }
 
-    public Note(String name, String surName, String lastName, long phoneNumber,  Gender gender) {
-        _name = name;
-        _surName = surName;
-        _lastName = lastName;
-        _phoneNumber = phoneNumber;
-        _gender = gender;
-        _data = null;
-    }
-
     public String getName() {
         return _name;
     }

@@ -59,11 +59,14 @@ public class Input {
 
     public Calendar newData(int index) {
         boolean isRun = true;
-        Calendar data;
+        GregorianCalendar data  ;
 
         do {
             _menu.getMenu(index);
-            data = inputData();
+            data = new GregorianCalendar();
+            data.set(Calendar.DAY_OF_MONTH,inputData(7));
+            data.set(Calendar.MONTH,inputData(8));
+            data.set(Calendar.YEAR,inputData(9));
             isRun = false;
         } while (isRun);
         return data;

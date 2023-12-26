@@ -17,9 +17,6 @@ public class Test {
     public static void testWriteFile(){
         Repositories repositories = new Repositories();
 
-        Note note = new Note("Илья","Николаевич","Григорьев",Long.parseLong("89213248144"), Gender.m);
-//        note.setData(7,9,1981);
-        repositories.createFile(note);
     }
 
     public static void testGender(){
